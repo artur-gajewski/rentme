@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/arturgajewski/code/work/rneu18/rentme/android/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/arturgajewski/.android/build-cache/ff7fe1d994c145dc9b9d82ce604a737b79c8f332/output/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/arturgajewski/code/work/rneu18/rentme/android/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/arturgajewski/.android/build-cache/ff7fe1d994c145dc9b9d82ce604a737b79c8f332/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/arturgajewski/code/work/rneu18/rentme/android/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/arturgajewski/.android/build-cache/ff7fe1d994c145dc9b9d82ce604a737b79c8f332/output/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/arturgajewski/code/work/rneu18/rentme/android/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/arturgajewski/.android/build-cache/ff7fe1d994c145dc9b9d82ce604a737b79c8f332/output/res/layout-v21/notification_action_tombstone.xml"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/arturgajewski/code/work/rneu18/rentme/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/arturgajewski/.android/build-cache/5dbd5dc43b9abf2abd93eabaf4ed9f8d12f7370f/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/arturgajewski/code/work/rneu18/rentme/android/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/Users/arturgajewski/.android/build-cache/ff7fe1d994c145dc9b9d82ce604a737b79c8f332/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/arturgajewski/code/work/rneu18/rentme/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/arturgajewski/.android/build-cache/5dbd5dc43b9abf2abd93eabaf4ed9f8d12f7370f/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/arturgajewski/code/work/rneu18/rentme/android/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/arturgajewski/.android/build-cache/5dbd5dc43b9abf2abd93eabaf4ed9f8d12f7370f/output/res/drawable-v21/abc_edit_text_material.xml"
+    }
+]

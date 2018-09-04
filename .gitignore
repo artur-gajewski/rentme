@@ -1,0 +1,16 @@
+# Deps
+/node_modules/
+
+# Runtime generated
+npm-debug.log
+yarn-error.log
+
+# Tool settings
+/.idea
+/.vagrant
+/.vscode
+/.bundle
+.DS_Store
+
+# yarn
+yarn-error.log
