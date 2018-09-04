@@ -73,10 +73,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   leftColumn: {
-    width: '20%'
+    width: '30%'
   },
   centerColumn: {
-    width: '60%'
+    width: '50%',
   },
   rightColumn: {
     width: '20%'
@@ -84,22 +84,22 @@ const styles = StyleSheet.create({
   thumbnail: {
     width: 75,
     height: 50,
-    marginStart: 10,
+    marginStart: 10
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    alignSelf: 'center'
+    alignSelf: 'flex-start'
   },
   price: {
     fontSize: 24,
     fontWeight: 'bold',
-    alignSelf: 'center'
+    alignSelf: 'flex-start'
   },
   description: {
     fontSize: 16,
     fontStyle: 'italic',
-    alignSelf: 'center'
+    alignSelf: 'flex-start'
   },
   price: {
     fontSize: 16,
