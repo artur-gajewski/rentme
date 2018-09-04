@@ -7,16 +7,24 @@
  */
 
 import React, { Component } from 'react';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider, connect } from 'react-redux';
+import axios from 'axios';
+import axiosMiddleware from 'redux-axios-middleware';
 
-import {
-  createStackNavigator,
-  createBottomTabNavigator
-} from 'react-navigation';
-
+import reducer from './ducks/items';
 import ItemList from './src/ItemList';
 import Details from './src/Details';
 
 type Props = {};
+
+const client = axios.create({
+  baseURL: 'https://api.github.com',
+  responseType: 'json'
+});
+
+const store = createStore(reducer, applyMiddleware(axiosMiddleware(client)));
 
 const RootNavigator = createStackNavigator({
   ItemList: {
@@ -29,6 +37,10 @@ const RootNavigator = createStackNavigator({
 
 export default class App extends Component<{}> {
   render() {
-    return <RootNavigator />;
+    return (
+      <Provider store={store}>
+        <RootNavigator />
+      </Provider>
+    );
   }
 }

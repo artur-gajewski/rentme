@@ -7,6 +7,7 @@
  */
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import {
   Platform,
@@ -19,14 +20,19 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import { getItems } from '../ducks/items';
 import Item from './Item';
-import catalog from '../data/catalog';
 
 type Props = {};
 
 const { width, height } = Dimensions.get('window');
 
 class ItemList extends Component {
+
+  componentDidMount() {
+    this.props.getItems();
+  }
+
   static navigationOptions = {
     title: 'Rentals'
   };
@@ -34,10 +40,13 @@ class ItemList extends Component {
   render() {
     const { items, navigation } = this.props;
 
+    console.log("------------------->");
+    console.log(this.props);
+
     return (
       <View style={{ flex: 1 }}>
         <FlatList
-          data={catalog}
+          data={items}
           renderItem={({ item }) => <Item navigation={navigation} key={item.id} item={item} />}
           keyExtractor={item => `${item.id}`}
         />
@@ -46,4 +55,14 @@ class ItemList extends Component {
   }
 }
 
-export default ItemList;
+const mapStateToProps = state => {
+  return {
+    items: state.items
+  };
+};
+
+const mapDispatchToProps = {
+  getItems
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemList);

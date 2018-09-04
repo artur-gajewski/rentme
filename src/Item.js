@@ -70,21 +70,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   leftColumn: {
     width: '20%'
   },
   centerColumn: {
-    width: '40%'
+    width: '60%'
   },
   rightColumn: {
-    width: '40%'
+    width: '20%'
   },
   thumbnail: {
     width: 75,
     height: 50,
-    marginStart: 10
+    marginStart: 10,
   },
   title: {
     fontSize: 24,
