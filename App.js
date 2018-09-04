@@ -14,6 +14,7 @@ import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
 
 import reducer from './ducks/items';
+import Home from './src/Home';
 import ItemList from './src/ItemList';
 import Details from './src/Details';
 
@@ -27,6 +28,9 @@ const client = axios.create({
 const store = createStore(reducer, applyMiddleware(axiosMiddleware(client)));
 
 const RootNavigator = createStackNavigator({
+  Home: {
+    screen: Home
+  },
   ItemList: {
     screen: ItemList
   },
