@@ -25,7 +25,7 @@ const { width, height } = Dimensions.get('window');
 
 class Details extends Component {
   static navigationOptions = {
-    title: 'Details'
+    title: 'Offer details'
   };
 
   render() {

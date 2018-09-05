@@ -26,7 +26,7 @@ const { width, height } = Dimensions.get('window');
 
 class Home extends Component {
   static navigationOptions = {
-    title: 'Home'
+    title: 'Welcome'
   };
 
   render() {
@@ -34,7 +34,6 @@ class Home extends Component {
 
     return (
       <View style={{ height, flex: 1, alignContent: 'center', justifyContent: 'center' }}>
-
         <LottieView
           style={{ alignSelf: 'center', marginBottom: 100, width: 220, height: 220 }}
           source={require('../assets/home_icon.json')}
@@ -42,7 +41,7 @@ class Home extends Component {
         />
         <Button onPress={() => navigation.navigate('ItemList')}
           title="Find your new home"
-          color="#ff7f50"
+          color="tomato"
           accessibilityLabel="Search and rent apartments"
         />
       </View >

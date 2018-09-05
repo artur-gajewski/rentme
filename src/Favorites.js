@@ -12,12 +12,9 @@ import { connect } from 'react-redux';
 import {
   Platform,
   StyleSheet,
-  Text,
   View,
   Dimensions,
-  Image,
   FlatList,
-  TouchableOpacity
 } from 'react-native';
 
 import { getItems } from '../ducks/items';
@@ -27,23 +24,19 @@ type Props = {};
 
 const { width, height } = Dimensions.get('window');
 
-class ItemList extends Component {
-
-  componentDidMount() {
-    this.props.getItems();
-  }
+class Favorites extends Component {
 
   static navigationOptions = {
-    title: 'New offers'
+    title: 'Favorites'
   };
 
   render() {
-    const { items, navigation } = this.props;
+    const { favorites, navigation } = this.props;
 
     return (
       <View style={{ flex: 1 }}>
         <FlatList
-          data={items}
+          data={favorites}
           renderItem={({ item }) => <Item navigation={navigation} key={item.id} item={item} />}
           keyExtractor={item => `${item.id}`}
         />
@@ -54,12 +47,8 @@ class ItemList extends Component {
 
 const mapStateToProps = state => {
   return {
-    items: state.items
+    favorites: state.favorites
   };
 };
 
-const mapDispatchToProps = {
-  getItems
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ItemList);
+export default connect(mapStateToProps)(Favorites);

@@ -1,16 +1,76 @@
-# Deps
-/node_modules/
+# OSX
+#
+.DS_Store
 
-# Runtime generated
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+android/app/build/
+android/.gradle/
+android/app/build/
+
+# node.js
+#
+node_modules/
 npm-debug.log
 yarn-error.log
 
-# Tool settings
-/.idea
-/.vagrant
-/.vscode
-/.bundle
-.DS_Store
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
 
-# yarn
-yarn-error.log
+# SweetBlue
+android/app/src/main/lib/sweetblue/docs/*
+android/app/src/main/lib/sweetblue/samples/*
+android/app/src/main/lib/sweetblue/jars/*
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/README.md
+fastlane/metadata/android/
+
+ios/build
+
+android/play-store-credentials.json
+
+# VSCode settings files
+/.vscode/settings.json
+/.vscode/.react
+jsconfig.json
+
+# Podfiles
+ios/Pods
