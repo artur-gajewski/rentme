@@ -18,6 +18,8 @@ import {
   Button
 } from 'react-native';
 
+import LottieView from 'lottie-react-native';
+
 type Props = {};
 
 const { width, height } = Dimensions.get('window');
@@ -31,8 +33,13 @@ class Home extends Component {
     const { navigation } = this.props;
 
     return (
-      <View style={{ height, flex: 1 }}>
-        <Text>Welcome!</Text>
+      <View style={{ height, flex: 1, alignContent: 'center', justifyContent: 'center' }}>
+
+        <LottieView
+          style={{ alignSelf: 'center', marginBottom: 100, width: 220, height: 220 }}
+          source={require('../assets/home_icon.json')}
+          autoPlay loop
+        />
         <Button onPress={() => navigation.navigate('ItemList')}
           title="Find your new home"
           color="#ff7f50"
@@ -42,6 +49,7 @@ class Home extends Component {
     );
   }
 }
+
 
 export default Home;
 
