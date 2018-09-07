@@ -20,7 +20,6 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import { getItems } from '../ducks/items';
 import OfferItem from './OfferItem';
 
 type Props = {};
@@ -28,10 +27,6 @@ type Props = {};
 const { width, height } = Dimensions.get('window');
 
 class Offers extends Component {
-
-  componentDidMount() {
-    this.props.getItems();
-  }
 
   static navigationOptions = {
     title: 'New offers'
@@ -59,7 +54,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  getItems
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Offers);

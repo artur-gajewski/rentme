@@ -20,7 +20,7 @@ class FavoriteItem extends Component {
       'Really want to remove this offer from your favorites?',
       [
         { text: 'Cancel', style: 'cancel' },
-        { text: 'OK', onPress: () => console.log('OK Pressed') },
+        { text: 'OK', onPress: () => this.props.onRemove(item) },
       ],
       { cancelable: false }
     );
@@ -33,7 +33,7 @@ class FavoriteItem extends Component {
       text: 'Delete',
       backgroundColor: 'red',
       underlayColor: 'rgba(0, 0, 0, 1, 0.6)',
-      onPress: () => { this.deleteItem(this.props.item) }
+      onPress: () => { this.deleteItem(item) }
     }];
 
     return (

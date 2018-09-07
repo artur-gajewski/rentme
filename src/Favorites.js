@@ -14,10 +14,11 @@ import {
   StyleSheet,
   View,
   Dimensions,
-  FlatList,
+  FlatList
 } from 'react-native';
 
 import FavoriteItem from './FavoriteItem';
+import { removeItem } from '../ducks/items';
 
 type Props = {};
 
@@ -30,13 +31,13 @@ class Favorites extends Component {
   };
 
   render() {
-    const { favorites, navigation } = this.props;
+    const { favorites, navigation, removeItem } = this.props;
 
     return (
       <View style={{ flex: 1 }}>
         <FlatList
           data={favorites}
-          renderItem={({ item }) => <FavoriteItem navigation={navigation} key={item.id} item={item} />}
+          renderItem={({ item }) => <FavoriteItem onRemove={removeItem} navigation={navigation} key={item.id} item={item} />}
           keyExtractor={item => `${item.id}`}
         />
       </View >
@@ -50,4 +51,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Favorites);
+const mapDispatchToProps = {
+  removeItem
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

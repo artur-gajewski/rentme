@@ -77,10 +77,10 @@ const styles = StyleSheet.create({
     width: '30%'
   },
   centerColumn: {
-    width: '50%',
+    width: '40%',
   },
   rightColumn: {
-    width: '20%'
+    width: '30%'
   },
   thumbnail: {
     width: 75,

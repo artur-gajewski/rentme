@@ -7,6 +7,8 @@
  */
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getItems } from '../ducks/items';
 
 import {
   Platform,
@@ -29,8 +31,14 @@ class Home extends Component {
     title: 'RentMe'
   };
 
+  componentDidMount() {
+    this.props.getItems();
+  }
+
   render() {
-    const { navigation } = this.props;
+    const { navigation, items, favorites } = this.props;
+
+    const buttonTitle = `Check out ${items.length} apartments`;
 
     return (
       <View style={[styles.container, { height: height }]}>
@@ -39,8 +47,9 @@ class Home extends Component {
           source={require('../assets/home_icon.json')}
           autoPlay loop
         />
+
         <Button onPress={() => navigation.navigate('Offers')}
-          title="Find your new home"
+          title={buttonTitle}
           color="tomato"
           accessibilityLabel="Search and rent apartments"
         />
@@ -48,9 +57,6 @@ class Home extends Component {
     );
   }
 }
-
-
-export default Home;
 
 const styles = StyleSheet.create({
   container: {
@@ -60,4 +66,15 @@ const styles = StyleSheet.create({
   }
 });
 
+const mapStateToProps = state => {
+  return {
+    items: state.items,
+    favorites: state.favorites
+  };
+};
 
+const mapDispatchToProps = {
+  getItems
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
