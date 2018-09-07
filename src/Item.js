@@ -1,6 +1,6 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * RentMe - React Native app
+ * https://github.com/artur-gajewski/rentme
  *
  * @format
  * @flow
@@ -17,6 +17,7 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+
 
 type Props = {};
 
@@ -100,10 +101,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontStyle: 'italic',
     alignSelf: 'flex-start'
-  },
-  price: {
-    fontSize: 16,
-    fontStyle: 'italic',
-    alignSelf: 'center'
   }
 });

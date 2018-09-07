@@ -1,12 +1,13 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * RentMe - React Native app
+ * https://github.com/artur-gajewski/rentme
  *
  * @format
  * @flow
  */
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import {
   Platform,
@@ -16,8 +17,11 @@ import {
   Dimensions,
   Image,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
+  Button
 } from 'react-native';
+
+import { addItem, removeItem } from '../ducks/items';
 
 type Props = {};
 
@@ -29,14 +33,36 @@ class Details extends Component {
   };
 
   render() {
-    const { navigation } = this.props;
+    const { favorites, navigation, addItem, removeItem } = this.props;
 
     const item = this.props.navigation.getParam('item');
+
+    const favoritesIndex = favorites.findIndex(f => f.id === item.id);
+
+    let button;
+
+    if (favoritesIndex < 0) {
+      button = (
+        <Button onPress={() => addItem(item)}
+          title="Add to favorites"
+          color="green"
+          accessibilityLabel="Add this offer to your favorites list"
+        />
+      );
+    } else {
+      button = (
+        <Button onPress={() => removeItem(item)}
+          title="Remove from favorites"
+          color="red"
+          accessibilityLabel="Remove this offer from your favorites list"
+        />
+      );
+    }
 
     return (
       <ScrollView style={{ height }}>
         <View style={styles.imageSection}>
-          <Image style={{ width: '100%', height: 420 }} source={{ uri: item.image }} />
+          <Image style={{ width: '100%', height: 360 }} source={{ uri: item.image }} />
         </View>
         <View style={styles.detailsSection}>
           <View style={styles.leftColumn}>
@@ -48,12 +74,14 @@ class Details extends Component {
             <Text style={styles.rating}>{item.rating}/5</Text>
           </View>
         </View>
+        <View style={styles.favoriteButton}>
+          {button}
+        </View>
+
       </ScrollView >
     );
   }
 }
-
-export default Details;
 
 const styles = StyleSheet.create({
   container: {
@@ -73,7 +101,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 180
+    height: 110
   },
   leftColumn: {
     width: '50%'
@@ -100,5 +128,22 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontStyle: 'italic',
     alignSelf: 'center'
+  },
+  favoriteButton: {
+    marginBottom: 10
   }
+
 });
+
+const mapStateToProps = state => {
+  return {
+    favorites: state.favorites
+  };
+};
+
+const mapDispatchToProps = {
+  addItem,
+  removeItem
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Details);

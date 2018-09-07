@@ -1,3 +1,11 @@
+/**
+ * RentMe - React Native app
+ * https://github.com/artur-gajewski/rentme
+ *
+ * @format
+ * @flow
+ */
+
 const data = [
   {
     "id": "08fa1f2d-5fea-4da1-b2bc-edf1b69b3e6e",

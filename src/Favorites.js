@@ -1,6 +1,6 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * RentMe - React Native app
+ * https://github.com/artur-gajewski/rentme
  *
  * @format
  * @flow
@@ -17,8 +17,7 @@ import {
   FlatList,
 } from 'react-native';
 
-import { getItems } from '../ducks/items';
-import Item from './Item';
+import FavoriteItem from './FavoriteItem';
 
 type Props = {};
 
@@ -37,7 +36,7 @@ class Favorites extends Component {
       <View style={{ flex: 1 }}>
         <FlatList
           data={favorites}
-          renderItem={({ item }) => <Item navigation={navigation} key={item.id} item={item} />}
+          renderItem={({ item }) => <FavoriteItem navigation={navigation} key={item.id} item={item} />}
           keyExtractor={item => `${item.id}`}
         />
       </View >

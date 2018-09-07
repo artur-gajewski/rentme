@@ -1,6 +1,6 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * RentMe - React Native app
+ * https://github.com/artur-gajewski/rentme
  *
  * @format
  * @flow
@@ -16,7 +16,7 @@ import axiosMiddleware from 'redux-axios-middleware';
 
 import reducer from './ducks/items';
 import Home from './src/Home';
-import ItemList from './src/ItemList';
+import Offers from './src/Offers';
 import Favorites from './src/Favorites';
 import Details from './src/Details';
 
@@ -31,7 +31,7 @@ const store = createStore(reducer, applyMiddleware(axiosMiddleware(client)));
 
 const TabNavigator = createBottomTabNavigator(
   {
-    ItemList: ItemList,
+    Offers: Offers,
     Favorites: Favorites
   },
   {
@@ -40,7 +40,7 @@ const TabNavigator = createBottomTabNavigator(
         const { routeName } = navigation.state;
 
         let icon;
-        if (routeName === 'ItemList') {
+        if (routeName === 'Offers') {
           icon = require('./assets/houses.png');
         } else if (routeName === 'Favorites') {
           icon = require('./assets/heart.png');
@@ -74,7 +74,6 @@ const RootNavigator = createStackNavigator({
 });
 
 export default class App extends Component<{}> {
-
   render() {
     return (
       <Provider store={store}>

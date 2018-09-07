@@ -1,6 +1,6 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * RentMe - React Native app
+ * https://github.com/artur-gajewski/rentme
  *
  * @format
  * @flow
@@ -21,13 +21,13 @@ import {
 } from 'react-native';
 
 import { getItems } from '../ducks/items';
-import Item from './Item';
+import OfferItem from './OfferItem';
 
 type Props = {};
 
 const { width, height } = Dimensions.get('window');
 
-class ItemList extends Component {
+class Offers extends Component {
 
   componentDidMount() {
     this.props.getItems();
@@ -44,7 +44,7 @@ class ItemList extends Component {
       <View style={{ flex: 1 }}>
         <FlatList
           data={items}
-          renderItem={({ item }) => <Item navigation={navigation} key={item.id} item={item} />}
+          renderItem={({ item }) => <OfferItem navigation={navigation} key={item.id} item={item} />}
           keyExtractor={item => `${item.id}`}
         />
       </View >
@@ -62,4 +62,4 @@ const mapDispatchToProps = {
   getItems
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemList);
+export default connect(mapStateToProps, mapDispatchToProps)(Offers);
